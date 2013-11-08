@@ -1,0 +1,7 @@
+form#game(action='/game/new', method='post')
+  fieldset
+    legend New Game
+    .row
+      mixin field(6, 'user', null, null, 'Brian', true)
+      .small-6.columns: button.radius.success.small.expand(type='submit') start
+    .row
