@@ -46,8 +46,14 @@ function submitGame(e){
 // ------------------------------------------------------------------------- //
 
 function htmlStartGame(game){
-  $('#user').text(game.user); // currently game.user isn't being saved, so this is ignored
-  $('#board').text(game.board);
+  $('#user').text(game.user);
+  // $('#board').text(game.board);
+  var squares = _.map(game.board, function(s, i){return '<div class="square" data-position="' + i + '"></div>';});
+
+
+
+  $('#board').append(squares);
+  $('#board').attr('data-id', game.id);
 }
 
 // ------------------------------------------------------------------------- //
