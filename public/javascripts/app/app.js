@@ -50,7 +50,11 @@ function htmlStartGame(game){
   // $('#board').text(game.board);
   // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece="#{game.board[0].val}" data-position="' + i + '"></div>';});
   // var squares = _.map(game.board, function(s, i){return '<div class="square #{game.board[0 + i].val}" data-position="' + i + '"></div>';});
-  var squares = _.map(game.board, function(s, i){return '<div class="square" data-position="' + i + '"></div>';});
+  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece=game.board[i] data-position="' + i + '"></div>';});
+  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-position=" + i + ">' + game.board[i] + '</div>';});
+  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece=' + game.board[i] + ' data-position=' + i + '></div>';});
+  var squares = _.map(game.board, function(s, i){return '<div class="square ' + game.board[i] + '" data-position=' + i + '></div>';});
+  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-position=" + i + "></div>';});
 
 
 
