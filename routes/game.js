@@ -118,7 +118,7 @@ function isValidMove(origPos, newPos) {
 
 function makeMove(game, move){
   // find user's current position
-  // determine whether movie is valid
+  // determine whether move is valid
   // rebuild the board
   // reposition the static pieces
   // look for result (winning, hitting a wormhole, etc.)

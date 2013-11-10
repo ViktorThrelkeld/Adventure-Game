@@ -4,8 +4,53 @@ function initialize(){
   $(document).foundation();
   $('form#game').on('submit', submitGame);
 
+  // $( 'body' ).keyup(keyhit);
+  $('body').bind('keyup click', keyHit);
+
+
 }
 
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------- //
+function keyHit(e){
+
+    // e = e || event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        alert('up');
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        alert('down');
+    }
+    else if (e.keyCode == '37') {
+        // left arrow
+        alert('left');
+    }
+    else if (e.keyCode == '39') {
+        // right arrow
+        alert('right');
+    }
+
+    // var code = e.keyCode ? e.keyCode : e.which;
+
+    // switch(code)
+    // {
+    // case 38:
+    //   break;
+
+    // case 40:
+    //   break;
+
+    // case 13:
+    //   break;
+
+    // default:
+    //   return;
+    // }
+  }
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
@@ -47,18 +92,11 @@ function submitGame(e){
 
 function htmlStartGame(game){
   $('#user').text(game.user + '\'s Adventure');
-  // $('#board').text(game.board);
-  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece="#{game.board[0].val}" data-position="' + i + '"></div>';});
-  // var squares = _.map(game.board, function(s, i){return '<div class="square #{game.board[0 + i].val}" data-position="' + i + '"></div>';});
-  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece=game.board[i] data-position="' + i + '"></div>';});
-  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-position=" + i + ">' + game.board[i] + '</div>';});
-  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece=' + game.board[i] + ' data-position=' + i + '></div>';});
+
   var squares = _.map(game.board, function(s, i){return '<div class="square ' + game.board[i] + '" data-position=' + i + '></div>';});
-  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-position=" + i + "></div>';});
 
 
-
-
+  // $('#health').
   $('#board').append(squares);
   $('#board').attr('data-id', game.id);
 }
