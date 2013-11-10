@@ -32,7 +32,7 @@ function createBoard(rows, scaries, deaths, holes){
   concat(duplicate(1,'g')).
   concat(duplicate(1,'p')).
   concat(duplicate(1,'e')).
-  concat(duplicate(scaries,'d')).
+  concat(duplicate(scaries,'s')).
   concat(duplicate(holes,'h')).
   concat(duplicate(deaths,'d')).
   concat(duplicate(spaces,'1'));

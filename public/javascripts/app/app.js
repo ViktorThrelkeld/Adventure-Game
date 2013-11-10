@@ -46,9 +46,12 @@ function submitGame(e){
 // ------------------------------------------------------------------------- //
 
 function htmlStartGame(game){
-  $('#user').text(game.user);
+  $('#user').text(game.user + '\'s Adventure');
   // $('#board').text(game.board);
+  // var squares = _.map(game.board, function(s, i){return '<div class="square" data-piece="#{game.board[0].val}" data-position="' + i + '"></div>';});
+  // var squares = _.map(game.board, function(s, i){return '<div class="square #{game.board[0 + i].val}" data-position="' + i + '"></div>';});
   var squares = _.map(game.board, function(s, i){return '<div class="square" data-position="' + i + '"></div>';});
+
 
 
 
