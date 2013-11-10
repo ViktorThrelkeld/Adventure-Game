@@ -23,20 +23,51 @@ exports.create = function(req, res){
  * POST /game/:id
  */
 
-function isValidMove(origPos, newPos){
-  if(_.contains(_.range(0, 8), origPos)){
-    _.contains([-1,1,7,8,9], newPos - origPos) //top
-  } &&
-  if(_.contains(_.range(7, 64, 8), origPos)){
-    _.contains([-1,-8,-9,7,8], newPos - origPos) //right
-  } &&
-  if(_.contains(_.range(56, 64), origPos)){
-    _.contains([1,-1,-7,-8,-9], newPos - origPos) //bottom
-  } &&
-  if(_.contains(_.range(0, 56, 8), origPos)){
-    _.contains([1,8,9,-8,-7], newPos - origPos) //left
-  } &&
-  _.contains([1,7,8,9], Math.abs(newPos - origPos)) //middle
+function isValidMove(origPos, newPos) {
+    return (function () {
+        debugger
+        if (_.contains(_.range(0, 8), origPos)) {
+            return _.contains([-1, 1, 7, 8, 9], newPos - origPos) //top
+        } else {
+            return true
+        }
+    })() &&
+
+    (function () {
+        debugger
+        if (_.contains(_.range(7, 64, 8), origPos)) {
+            return _.contains([-9, -8, -1, 7, 8], newPos - origPos) //right
+        } else {
+            return true
+        }
+    })() &&
+
+    (function () {
+        debugger
+        if (_.contains(_.range(56, 64), origPos)) {
+            return _.contains([-9, -8, -7, -1, 1], newPos - origPos) //bottom
+        } else {
+            return true
+        }
+    })() &&
+
+    (function () {
+        debugger
+        if (_.contains(_.range(0, 57, 8), origPos)) {
+            return _.contains([-8, -7, 1, 8, 9], newPos - origPos) //left
+        } else {
+            return true
+        }
+    })() &&
+
+    (function () {
+        debugger
+        if (_.contains(_.range(0, 64), origPos) && _.contains(_.range(0, 64), newPos)) {
+            return Math.abs(newPos - origPos) in [1, 7, 8, 9] //middle
+        } else {
+            return false
+        }
+    })()
 }
 
 function makeMove(game, move){
