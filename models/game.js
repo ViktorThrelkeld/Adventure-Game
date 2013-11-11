@@ -48,7 +48,6 @@ function findStaticPositions(board){
   return {p: posPrincess, g: posGold, e: posExit};
 }
 
-
 Game.pre('save', function(next){
   if(!this.board.length){
     this.board = createBoard(rows, scaries, deaths, holes);

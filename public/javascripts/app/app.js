@@ -4,15 +4,14 @@ function initialize(){
   $(document).foundation();
   $('form#game').on('submit', submitGame);
 
-  // $( 'body' ).keyup(keyhit);
+  // $( 'body' ).keyup(keyHit);
   $('body').bind('keyup click', keyHit);
-
-
 }
 
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
+
 function keyHit(e){
 
     // e = e || event;
@@ -51,6 +50,7 @@ function keyHit(e){
     //   return;
     // }
   }
+
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------- //
@@ -73,6 +73,7 @@ function submitGame(e){
   sendGenericAjaxRequest(url, {}, 'post', null, e, function(data){
     htmlStartGame(data);
   });
+
   // $.ajax({
   //   url: url,
   //   type: 'POST',
@@ -92,11 +93,7 @@ function submitGame(e){
 
 function htmlStartGame(game){
   $('#user').text(game.user + '\'s Adventure');
-
   var squares = _.map(game.board, function(s, i){return '<div class="square ' + game.board[i] + '" data-position=' + i + '></div>';});
-
-
-  // $('#health').
   $('#board').append(squares);
   $('#board').attr('data-id', game.id);
 }

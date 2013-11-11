@@ -146,7 +146,7 @@ function makeMove(game, move){
 
 exports.update = function(req, res){
   Game.findById(req.query.id, function(err, game){
-    fakeGame = {board: ['a','b','c'], status: {message: 'Ouch!', health: 40}}
-    res.send(fakeGame); // board + status);
+    //fakeGame = {board: ['a','b','c'], status: {message: 'Ouch!', health: 40}
+    res.send(game) // {board, status}
   })
-};
+}
