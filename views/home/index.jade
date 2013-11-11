@@ -12,7 +12,14 @@ block content
   .row
     .small-12.columns
       h1.subheader#user
-      //- h5.subheader#health Health:
+    .small-2.columns
+      h5.subheader#stats Health: <span id="health"></span>
+    .small-2.columns
+      h5.subheader#gold Gold
+    .small-2.columns
+      h5.subheader#princess Princess
+    .small-6.columns
+      h5.subheader Message: <span id="message"></span>
   .row
     .small-12.columns
       #board
