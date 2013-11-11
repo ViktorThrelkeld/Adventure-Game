@@ -29,13 +29,13 @@ function duplicate(count, string){
 function createBoard(rows, scaries, deaths, holes){
   var spaces = rows*rows - 4 - scaries - deaths - holes;
   var board = duplicate(1,'u').
-  concat(duplicate(1,'g')).
-  concat(duplicate(1,'p')).
-  concat(duplicate(1,'e')).
-  concat(duplicate(scaries,'s')).
-  concat(duplicate(holes,'h')).
-  concat(duplicate(deaths,'d')).
-  concat(duplicate(spaces,'1'));
+                concat(duplicate(1,'g')).
+                concat(duplicate(1,'p')).
+                concat(duplicate(1,'e')).
+                concat(duplicate(scaries,'s')).
+                concat(duplicate(holes,'h')).
+                concat(duplicate(deaths,'d')).
+                concat(duplicate(spaces,'1'));
   board = _.shuffle(board);
   // board = board.toString().replace(/,/g,'');
   return board;
