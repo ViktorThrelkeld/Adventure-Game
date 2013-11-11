@@ -24,7 +24,6 @@ exports.start = function(req, res){
  * POST /game/:id
  */
 
-
 // function isValidMove(origPos, newPos) {
 //     return (function () {
 //         debugger
@@ -72,7 +71,6 @@ exports.start = function(req, res){
 //     })()
 // }
 
-
 function isValidMove(origPos, newPos) {
   return (function () {
       if (_.contains(_.range(0, 8), origPos)) {
@@ -118,20 +116,18 @@ function isValidMove(origPos, newPos) {
 
 function makeMove(game, move){
   // find user's current position
+  var posUser = _.indexOf(board, "u");
   // determine whether move is valid
+
+  // var move = isValidMove(posUser, move);
+
   // rebuild the board
   // reposition the static pieces
   // look for result (winning, hitting a wormhole, etc.)
-  var posUser = _.indexOf(board, "u");
-
 }
 
 exports.update = function(req, res){
   Game.findById(req.query.id, function(err, game){
-
-
-
-
 
     res.send(game); // board + status);
   })
