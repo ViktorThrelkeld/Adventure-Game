@@ -11,8 +11,19 @@ block content
       include _form
   .row
     .small-12.columns
-      //- h2#user
-      h4#health
+      h1#user
+  .box.hide
+    .row#status
+      .small-2.small-offset-3.columns
+        h5#stats Health: <span id="health"></span>
+      .small-2.columns
+        h5#gold Spacedust:
+      .small-1.columns
+        h5#princess Ship:
+      .small-7.columns
+    .row#mssg
+      .small-9.small-offset-3.columns
+        h5 Message: <span id="message"></span>
   .row
     .small-10.small-offset-1.columns
       #board
