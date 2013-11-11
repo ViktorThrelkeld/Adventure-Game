@@ -1,41 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100|Merriweather:300|Oswald:700);
 @base: #ffccab;
 
 body{
-  background-color: @base;
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+h1, h2#user, h4#health{
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+#health{
+  margin: 50px 0 30px 0;
+}
+
+h1{
+  margin: 30px 0 10px 0;
+  font-size: 75px;
+}
+
+h1 span{
+  font-family: 'Lato', serif;
+  font-size: 50px;
+}
+
+fieldset{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 76px;
+  background-color: rgba(1,1,1,.4);
+  border: none;
+}
+
 #board{
-  width: 420px;
+  width: 840px;
 }
+
 .square{
   float: left;
-  width: 50px;
-  height: 50px;
-  margin: 0;
-  border: 1px solid #252525;
-  background-color: #fff;
+  width: 97px;
+  height: 76px;
+  margin: 2px;
+  background-color: rgba(255,255,255,.6);
   color: #252525;
 }
 
 .s{
-  background-color: black;
-}
-
-.p{
-  background-color: pink;
-}
-
-.g{
-  background-color: gold;
+  background: url(../images/asteroid.jpg) no-repeat center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .e{
-  background-color: blue;
+  background: url(../images/earth.jpg) no-repeat center center;
+  -webkit-background-size: 160%;
+  -moz-background-size: 160%;
+  -o-background-size: 160%;
+  background-size: 160%;
+  border: 4px solid orange;
+}
+
+.d{
+  background: url(../images/death4.jpg) no-repeat center center;
+  -webkit-background-size: 160%;
+  -moz-background-size: 160%;
+  -o-background-size: 160%;
+  background-size: 160%;
 }
 
 .h{
-  background-color: gray;
+  background: url(../images/wormhole.jpg) no-repeat center center;
+  -webkit-background-size: 160%;
+  -moz-background-size: 160%;
+  -o-background-size: 160%;
+  background-size: 160%;
 }
 
 .u{
-  background-color: orange;
+  background: url(../images/spaceman.jpg) no-repeat center center;
+  -webkit-background-size: 140%;
+  -moz-background-size: 140%;
+  -o-background-size: 140%;
+  background-size: 140%;
+  border: 4px solid orange;
+}
+
+button, .button {
+  background-color: #8b225c;
+  border-color: #6b1a47;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #6b1a47;
 }

@@ -92,7 +92,9 @@ function submitGame(e){
 // ------------------------------------------------------------------------- //
 
 function htmlStartGame(game){
-  $('#user').text(game.user + '\'s Adventure');
+  // $('#user').text(game.user + '\'s Adventure');
+  $('#health').text(game.user + '\'s Health: ' + game.health);
+  $('#form').remove();
   var squares = _.map(game.board, function(s, i){return '<div class="square ' + game.board[i] + '" data-position=' + i + '></div>';});
   $('#board').append(squares);
   $('#board').attr('data-id', game.id);
